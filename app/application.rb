@@ -22,11 +22,11 @@ class Application
       end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
-      binding.pry
       resp.write handle_search(search_term)
     elsif req.path.match(/add/)
       add_item = req.params["q"]
-      
+            binding.pry
+
     else
       resp.write "Path Not Found"
     end
