@@ -25,8 +25,8 @@ class Application
       resp.write handle_search(search_term)
     elsif req.path.match(/add/)
       add_item = req.params["q"]
+      binding.pry
       if @@items.include? '#{add_item}'
-        binding.pry
         @@cart << add_item
         resp.write "added #{item}\n"
       else
