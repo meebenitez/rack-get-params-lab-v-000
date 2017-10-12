@@ -8,7 +8,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match(/items/)
+    if req.path.match(/cart/)
       if @@cart == []
         resp.write "Your cart is empty\n"
       else
@@ -16,7 +16,7 @@ class Application
           resp.write "#{item}\n"
         end
       end
-    elsif req.path.match(/cart/)
+    elsif req.path.match(/items/)
       @@cart.each do |item|
         resp.write "#{item}\n"
       end
